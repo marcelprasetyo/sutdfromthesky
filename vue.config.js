@@ -1,4 +1,3 @@
-const path = require('path');
 
 module.exports = {
     lintOnSave: false,
@@ -29,20 +28,5 @@ module.exports = {
         //   // and falls back to `public/index.html` if not found.
         //   // Output filename is inferred to be `subpage.html`.
         //   //subpage: 'src/subpage/main.js'
-    },
-    chainWebpack: config => {
-        const oneOfsMap = config.module.rule('scss').oneOfs.store
-        oneOfsMap.forEach(item => {
-            item
-                .use('sass-resources-loader')
-                .loader('sass-resources-loader')
-                .options({
-                    // Provide path to the file with resources
-                    resources: './path/to/resources.scss',
-                    // Or array of paths
-                    resources: ['./path/to/vars.scss', './path/to/mixins.scss']
-                })
-                .end()
-        })
     }
-}
+};
