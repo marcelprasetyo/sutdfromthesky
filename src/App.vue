@@ -1,12 +1,13 @@
 <template>
   <div id="app">
-    <div style="padding-top:.4rem"></div>
-    <div class="nav1">
-      <a>Aesthetic Helicopter View</a>
-      <router-link to="/simple" class="toptab">SUTD News & Resources Viewer</router-link>
-      <router-link to="/" class="toptab">SUTD One Stop</router-link>
-      <router-link to="/" class="toptab" id="homelink">Home</router-link>
+    <div style="padding-top:0rem"></div>
+    <div class="nav1" id="nav1">
+      <a id="nav1-1">Aesthetic Helicopter View</a>
+      <router-link id="nav1-2" to="/simple" class="toptab">SUTD News & Resources Viewer</router-link>
+      <router-link id="nav1-3" to="/" class="toptab">SUTD One Stop</router-link>
+      <router-link id="nav1-4" to="/" class="toptab">Home</router-link>
     </div>
+    <hr v-if="white">
 
     <transition name="fade" mode="out-in" @beforeLeave="beforeLeave"
                         @enter="enter"
@@ -29,9 +30,37 @@
           data() {
     return {
       prevHeight: 0,
+      white: false,
     };
   },
-  methods: {
+    watch:{
+      $route: function(to, from) {
+        if (this.white && to.path === "/" && ( /^(\/simple)/.test(from.path)) ) {
+          this.handWash();
+        }
+      }
+    },
+    methods: {
+      handWash() {
+        this.white = false;
+
+        document.getElementById("themebutton").innerHTML = 'WHITE THEME';
+        document.body.style.background = 'transparent';
+        document.getElementById("nav1").style.background = 'rgba(255,22,5,0.8)';
+        document.getElementById("simplenav").style.background = '#d7dbd3';
+        document.getElementById("footer").style.background = '#b90233';
+        document.getElementById("footer").style.color = 'rgba(211, 213, 223, 0.95)';
+        document.body.style.minHeight = 'inherit';
+
+
+        let a = [document.getElementById(("nav1-1")), document.getElementById(("nav1-2")), document.getElementById(("nav1-3")), document.getElementById(("nav1-4"))];
+        for (let i = 0; i < a.length; i++) {
+          a[i].style.textShadow = "2px 2px #460083";
+          a[i].style.color = "rgba(211, 213, 223, 0.95)";
+
+        }
+        a[3].style.color = "#c2c5f2";
+      },
     beforeLeave(element) {
       this.prevHeight = getComputedStyle(element).height;
     },
@@ -57,6 +86,10 @@
     background: linear-gradient(348deg, rgba(209,0,64,1) 0%, rgba(134,77,125,1) 6%, rgba(80,133,170,1) 19%, rgba(35,179,206,1) 39%, rgba(21,192,226,1) 69%, rgba(0,212,255,1) 100%);
     background-attachment: fixed;
     min-height: 100%;
+  }
+
+  body {
+    margin: 0;
   }
 
   #cat {
@@ -119,10 +152,10 @@
     font-size: 1.3rem;
   }
 
-  #homelink {
+  #nav1-4 {
   color: #c2c5f2;
 }
-  #homelink:hover {
+  #nav1-4:hover {
     color: rgba(230, 232, 242, 0.95);
   }
 
@@ -147,7 +180,7 @@
   }
 
   .flyingtext {
-    font-size: 2.2vw;
+    font-size: 2.8vw;
   }
 
   .flyingtext a, .flyingtext a:visited, .flyingtext a:active {

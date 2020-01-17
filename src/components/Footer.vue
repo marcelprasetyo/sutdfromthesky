@@ -1,7 +1,7 @@
 <template>
   <div>
     <br><hr>
-    <div class="footer">
+    <div class="footer" id="footer">
       <br>
       <p style="font-size:1.4rem">SUTD From The Sky</p>
       <p style="text-align:right;"><span style="font-size:0.9rem;margin-right:10%;">by Humble Villager </span></p>

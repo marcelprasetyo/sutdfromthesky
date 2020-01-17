@@ -2,7 +2,7 @@
   <div class="home">
     <div style="padding:1rem 0;"></div>
     <div style="display:flex;flex-direction:row">
-    <p class="title0" style="font-size:5rem;margin:0 0 2rem 0;">SUTD From The Sky</p>
+    <p class="title0" style="font-size:5rem;margin:0 0 2rem 0;">:)</p>
     <p class="title" style="font-size:5rem;margin:0 0 2rem 0;">SUTD From The Sky</p>
     </div>
     <div class="table">
@@ -11,9 +11,9 @@
         <br><br>
       </div>
       <div class="flyingtext semi" style="width:60%;text-align:left;padding: 2rem 1rem;">
-        <a> Aesthetic Helicopter View (AerView) </a> <br><br>
-        <router-link to="/simple"> Simple SUTD Viewer </router-link> <br><br>
-        <router-link to="/"> One Stop Portal </router-link>
+        <a class="font-fancy"> Aesthetic Helicopter View (AerView) </a> <br><br>
+        <router-link class="font-fancy" to="/simple"> Simple SUTD Viewer </router-link> <br><br>
+        <router-link class="font-fancy" to="/"> One Stop Portal </router-link>
       </div>
 
     </div>
@@ -27,7 +27,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 
   .table {
     display: flex;
@@ -47,8 +47,13 @@
     }
   }
 
+  .font-fancy {
+    font-family: 'Lobster', 'Oswald', serif;
+  }
+
   .title {
     position: absolute;
+
     animation-delay: 2s;
     animation-timing-function: ease-in;
     font-family: 'Lobster', 'Oswald', serif;
