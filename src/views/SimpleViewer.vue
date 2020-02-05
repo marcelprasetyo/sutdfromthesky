@@ -3,8 +3,9 @@
     <p style="text-align:right;margin-right:5%"><button id="themebutton" @click="changeBg">WHITE THEME</button></p>
     <div class="nav2" id="simplenav">
       <router-link to="/simple" class="tab cursory">Home</router-link>
-      <router-link to="/simple/allnews" class="tab">All News</router-link>
-      <router-link to="/simple/allevents" class="tab">All Events</router-link>
+      <!--  Links here are listed neatly using the list in data() below   -->
+      <router-link v-for="item in items" :key="item.id" :to="item.route" class="tab">{{item.title}}</router-link>
+
     </div>
     <transition name="fade" mode="out-in" @beforeLeave="beforeLeave"
                                         @enter="enter"
@@ -25,7 +26,16 @@
     data() {
       return {
         home: true,
-        prevHeight: 0
+        prevHeight: 0,
+        items: [
+          {route: '/simple/allnews', title: 'All News', id: 1},
+          {route: '/simple/allevents', title: 'All Events', id: 2},
+          {route: '/simple/allpublications', title: 'All Publications', id: 3},
+          {route: '/simple/videos', title: 'Videos and Media', id: 4},
+          {route: '/simple/allachievements', title: 'All Achievements', id: 5},
+          {route: '/simple/alllistsofpeople', title: 'All Lists Of People', id: 6},
+          {route: '/simple/sutdjobscareers', title: 'SUTD Jobs and Careers', id: 7}
+        ],
       };
     },
     mounted() {
@@ -40,10 +50,10 @@
       whiteWash() {
         this.$parent.white = true;
         document.getElementById("themebutton").innerHTML = 'ORIGINAL THEME';
-        document.body.style.background = '#FFFFFF';
-        document.getElementById("nav1").style.background = '#FFFFFF';
-        document.getElementById("simplenav").style.background = '#FFFFFF';
-        document.getElementById("footer").style.background = '#FFFFFF';
+        document.body.style.background = '#fff6fe';
+        document.getElementById("nav1").style.background = '#f0f5df';
+        document.getElementById("simplenav").style.background = '#ffebeb';
+        document.getElementById("footer").style.background = '#f9f9f9';
         document.getElementById("footer").style.color = '#000000';
         document.body.style.minHeight = '100vh';
 
