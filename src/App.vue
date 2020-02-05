@@ -4,7 +4,7 @@
     <div class="nav1" id="nav1">
       <a id="nav1-1">Aesthetic Helicopter View</a>
       <router-link id="nav1-2" to="/simple" class="toptab">SUTD News & Resources Viewer</router-link>
-      <router-link id="nav1-3" to="/" class="toptab">SUTD One Stop</router-link>
+      <router-link id="nav1-3" to="/onestop" class="toptab">SUTD One Stop</router-link>
       <router-link id="nav1-4" to="/" class="toptab">Home</router-link>
     </div>
     <hr v-if="white">
@@ -35,7 +35,7 @@
   },
     watch:{
       $route: function(to, from) {
-        if (this.white && to.path === "/" && ( /^(\/simple)/.test(from.path)) ) {
+        if (this.white && to.path === "/" && ( /^(\/simple)/.test(from.path)) || this.white && to.path === "/" && ( /^(\/onestop)/.test(from.path)) ) {
           this.handWash();
         }
       }
@@ -130,7 +130,7 @@
 
 
 #app {
-  font-family: 'Poppins', 'Public Sans', Helvetica, Arial, sans-serif;
+  font-family: 'Oswald', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -207,5 +207,37 @@
     opacity: 0
   }
 
+  button {
+    border: 2px solid gray;
+    font-family: 'Oswald', Helvetica, Arial, sans-serif;
+    background-color: white;
+    font-size: 1rem;
+    border-color: #7b7e7b;
+    color: black;
+    cursor: pointer;
+    border-radius: .6rem;
+  }
+
+  button:hover {
+    background-color: #d13531;
+    color: white;
+  }
+
+  a {
+    color: #2c3e50;
+  }
+
+  a:visited {
+    color: #2c3e50;
+  }
+
+  ::selection {
+    background: #ff0047; /* WebKit/Blink Browsers */
+    color: white;
+  }
+  ::-moz-selection {
+    background: #ff0047; /* Gecko Browsers */
+    color: white;
+  }
 
 </style>

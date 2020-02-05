@@ -6,27 +6,35 @@
     <div class="frame" style="display:flex;flex-direction:column">
       <p style="padding: .5rem 0;font-weight:600;"> <img src="https://www.sutd.edu.sg/favicon.ico" width="16px"> <a href="https://www.sutd.edu.sg/About-Us/News-and-Events/News" target="_blank">SUTD Official News</a>
       <br><button @click="toggleShowNews1">Load/Unload Page Here</button></p>
-      <iframe v-if="showNews1" src="https://www.sutd.edu.sg/About-Us/News-and-Events/News" height="500vh" ></iframe>
+        <transition name="fade" mode="out-in">
+            <iframe v-if="showNews1" src="https://www.sutd.edu.sg/About-Us/News-and-Events/News" height="500vh" ></iframe>
+        </transition>
     </div>
 
 
     <div class="frame" style="display:flex;flex-direction:column">
       <p style="padding: .5rem 0;font-weight:600;"> <img src="https://www.sutd.edu.sg/favicon.ico" width="16px"> <a href="https://www.sutd.edu.sg/Research/Research-News" target="_blank">SUTD Research News</a>
         <br><button @click="toggleShowNews3">Load/Unload Page Here </button></p>
-      <iframe v-if="showNews3" src="https://www.sutd.edu.sg/Research/Research-News" height="500vh"></iframe>
+        <transition name="fade" mode="out-in">
+            <iframe v-if="showNews3" src="https://www.sutd.edu.sg/Research/Research-News" height="500vh"></iframe>
+        </transition>
     </div>
 
 
     <div class="frame" style="display:flex;flex-direction:column">
       <p style="padding: .5rem 0;font-weight:600;"> <img src="https://www.sutd.edu.sg/favicon.ico" width="16px"> <a href="https://www.sutd.edu.sg/About-Us/News-and-Events/Press-Releases" target="_blank">SUTD Press Releases</a>
         <br><button @click="toggleShowNews2">Load/Unload Page Here </button></p>
-      <iframe v-if="showNews2" src="https://www.sutd.edu.sg/About-Us/News-and-Events/Press-Releases" height="500vh"></iframe>
+        <transition name="fade" mode="out-in">
+            <iframe v-if="showNews2" src="https://www.sutd.edu.sg/About-Us/News-and-Events/Press-Releases" height="500vh"></iframe>
+        </transition>
     </div>
 
     <div class="frame" style="display:flex;flex-direction:column">
       <p style="padding: .5rem 0;font-weight:600;"> <img src="https://www.sutd.edu.sg/favicon.ico" width="16px"> <a href="https://www.sutd.edu.sg/About-Us/News-and-Events/Speeches" target="_blank">SUTD Speeches</a>
         <br><button @click="toggleShowNews4">Load/Unload Page Here </button></p>
-      <iframe v-if="showNews4" src="https://www.sutd.edu.sg/About-Us/News-and-Events/Speeches" height="500vh"></iframe>
+        <transition name="fade" mode="out-in">
+            <iframe v-if="showNews4" src="https://www.sutd.edu.sg/About-Us/News-and-Events/Speeches" height="500vh"></iframe>
+        </transition>
     </div>
 
     <iframe src="https://wearesutd.sutd.edu.sg" height="500vh">wearesutd</iframe>

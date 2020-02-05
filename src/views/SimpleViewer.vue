@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p style="text-align:right;margin-right:5%"><button id="themebutton" @click="changeBg">WHITE THEME</button></p>
+    <p style="text-align:right;margin-right:5%"><button class="btn hideBtn" style="margin:0;padding:0" id="themebutton" @click="changeBg">WHITE THEME</button></p>
     <div class="nav2" id="simplenav">
       <router-link to="/simple" class="tab cursory">Home</router-link>
       <!--  Links here are listed neatly using the list in data() below   -->
@@ -13,7 +13,7 @@
       <router-view/>
       <div v-if="home">
         <p>Hi welcome to the site where you can access all relevant SUTD news.
-          <br> Coming your way. <br> Here's the magic link we use: <br> <a href=": https://www.sutd.edu.sg/Prospective-Students" target="_blank">https://www.sutd.edu.sg/Prospective-Students</a></p>
+          <br> Here's the magic link we use: <br> <a href=": https://www.sutd.edu.sg/Prospective-Students" target="_blank">https://www.sutd.edu.sg/Prospective-Students</a></p>
       </div>
     </transition>
   </div>
@@ -33,7 +33,7 @@
           {route: '/simple/allpublications', title: 'All Publications', id: 3},
           {route: '/simple/videos', title: 'Videos and Media', id: 4},
           {route: '/simple/allachievements', title: 'All Achievements', id: 5},
-          {route: '/simple/alllistsofpeople', title: 'All Lists Of People', id: 6},
+          // {route: '/simple/alllistsofpeople', title: 'All Lists Of People', id: 6},
           {route: '/simple/sutdjobscareers', title: 'SUTD Jobs and Careers', id: 7}
         ],
       };
@@ -101,10 +101,6 @@
           // else document.style.background = '#FFFFFF';
         }
       },
-      toggle() {
-        if (!this.home)
-          this.home = !this.home;
-      },
       beforeLeave(element) {
         this.prevHeight = getComputedStyle(element).height;
       },
@@ -119,7 +115,7 @@
       },
       afterEnter(element) {
         element.style.height = 'auto';
-      },
+      }
     },
   };
 </script>

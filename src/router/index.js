@@ -9,6 +9,7 @@ import Videos from'../views/Videos'
 import AllPublications from '../views/AllPublications'
 import SUTDJobsCareers from '../views/SUTDJobsCareers'
 import WeAreSUTD from '../views/WeAreSUTD'
+import OneStop from '../views/OneStop'
 
 Vue.use(VueRouter);
 
@@ -17,6 +18,11 @@ const routes = [
     path: '/',
     name: 'home',
     component: Home
+  },
+  {
+   path: '/onestop',
+   name: 'onestop',
+   component: OneStop
   },
   {
     path: '/simple',
