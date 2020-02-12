@@ -82,7 +82,7 @@
 
 
       </div>
-      <br><br><br>
+      <br><br><br><br>
       <div>
         <p class="section-title" style="text-align:left"><b>Often Visited</b></p>
         <hr class="hr-section">
@@ -457,6 +457,8 @@
 
   .item-row {
     display: flex;
+    border-radius: 1rem;
+    background: #dcddf2;
     transition-property: height;
     transition: .5s;
     flex-direction: row;

@@ -147,6 +147,7 @@
 
   .nav1 a:hover {
     font-weight: 600;
+    background: rgba(255, 50, 35, 0.8);
     color: rgba(230, 232, 242, 0.95);
     text-decoration: none;
     font-size: 1.3rem;
